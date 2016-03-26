@@ -9,6 +9,10 @@ function DirectoryExists(dir)
 }
 function DirectoryCanMake(dir) 
 {
+  if(dir[dir.length-1]=="/")
+  {
+    return DirectoryCanMake(dir.substring(0,dir.length-2));
+  }
   var t=dir.split("/");
   if(t.length==1) return true;
   return DirectoryExists(t.slice(0,t.length-1).join("/"))
