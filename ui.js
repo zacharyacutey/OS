@@ -5,4 +5,5 @@ function ListDirectory()
   {
     r+=i+"<br>";
   }
+  WriteToUI( r );
 }
