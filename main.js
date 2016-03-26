@@ -11,7 +11,7 @@ function DirectoryCanMake(dir)
 {
   if(dir[dir.length-1]=="/")
   {
-    return DirectoryCanMake(dir.substring(0,dir.length-2));
+    return DirectoryCanMake(dir.substring(0,dir.length-1));
   }
   var t=dir.split("/");
   if(t.length==1) return true;
