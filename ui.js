@@ -1,9 +1,9 @@
 function ListDirectory()
 {
-  var r="";
-  for(var i in fs.map(function(arg){return arg[0];}))
+  var r="",t;
+  for(var i in t=fs.map(function(arg){return arg[0];}))
   {
-    r+=i+"<br>";
+    r+=t[i]+"<br>";
   }
   WriteToUI( r );
 }
