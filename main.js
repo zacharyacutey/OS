@@ -54,17 +54,16 @@ function SaveEvalString()
 
 function CookieString()
 {
-  return 'eval="'+SaveEvalString()+'"';
+  return 'eval='+SaveEvalString()+'';
 }
 
 function Save()
 {
-  document.cookie="expires=Fri, 25 mar 2016 00:00:00 EST;"
   document.cookie="expires=Wed, 1 Jan 2020 00:00:00 EST;"+CookieString();
 }
 
 function Load()
 {
   if(document.cookie.length!=37&&document.cookie.length!=36)
-  eval(document.cookie.substring(37,document.cookie.length-2));
+  eval(document.cookie.substring(42,document.cookie.length-2));
 }
