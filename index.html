@@ -9,11 +9,19 @@
   </head>
   <body>
     <button onclick="Save();">Save</button>
+    <button onclick="ListDirectory();">List Directory</button>
+    <button onclick="WriteToFile(document.getElementById('arg1').value,document.getElementById('arg2').value);">Write #2 To File #1</button>
+    <button onclick="AppendToFile(document.getElementById('arg1').value,document.getElementById('arg2').value);">Append #2 To File #1</button>
+    <button onclick="DeleteFile(document.getElementById('arg1').value);"></button>
+    <button onclick="WriteToUI(GetFileText(document.getElementById('arg1').value));"></button>
     <div id="ui" style="background-color:black;color:rgb(0,255,0);">
       Test
     </div>
-    <textarea id="input">
-      Type Input Here
+    <textarea id="arg1">
+      Argument 1
+    </textarea>
+    <textarea id="arg2">
+      Argument 2
     </textarea>
   </body>
 </html>
