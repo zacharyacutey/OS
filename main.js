@@ -1,21 +1,20 @@
 var fs=[]; //the root object;
 
-Array.prototype.append=function(item){
-  if(item in this.map(function(arg){return arg[0];}))
+var append=function(this_,item){
+  if(item in this_.map(function(arg){return arg[0];}))
   {
-    var i=this.map(function(arg){return arg[0];}).indexOf(item[0]);
-    this[i]=item;
+    var i=this_.map(function(arg){return arg[0];}).indexOf(item[0]);
+    this_[i]=item;
   }
   else
   {
-   this[this.length]=item;
+   this_[this_.length]=item;
   }
 };
-Array.prototype.append_=function(item){this[this.length]=item;};
 
 function WriteToFile(name,text)
 {
-  fs.append([name,text]);
+  append(fs,[name,text]);
 }
 
 function GetFileText(name)
@@ -48,22 +47,24 @@ function SaveEvalString()
   var r="";
   for(var i in fs)
   {
-    r+=SaveFileEvalString(i);
+    r+=SaveFileEvalString(fs[i][0]);
   }
   return r;
 }
 
 function CookieString()
 {
-  return 'eval="'+SaveEvalString()+'";';
+  return 'eval="'+SaveEvalString()+'"';
 }
 
 function Save()
 {
+  document.cookie="expires=Fri, 25 mar 2016 00:00:00 EST;"
   document.cookie="expires=Wed, 1 Jan 2020 00:00:00 EST;"+CookieString();
 }
 
 function Load()
 {
+  if(document.cookie.length!=37&&document.cookie.length!=36)
   eval(document.cookie.substring(37,document.cookie.length-2));
 }
