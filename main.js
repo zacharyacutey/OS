@@ -40,7 +40,7 @@ function WriteToUI(text)
 
 function SaveFileEvalString(name)
 {
-  return "WriteToFile('"+name"','"+GetFileText(name)+"');";
+  return "WriteToFile('"+name+"','"+GetFileText(name)+"');";
 }
 
 function SaveEvalString()
