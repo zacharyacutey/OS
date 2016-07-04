@@ -25,6 +25,3 @@ dstring ContentDencodeString(string arg)
 	}
 	return s.idup;
 }
-void main()
-{
-}
