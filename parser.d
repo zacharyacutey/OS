@@ -1,8 +1,8 @@
 import std.stdio;
-
+module parser;
 string to_d(string arg)
 {
-	string temp = "";
+	string temp = "import shell;";
 	int i = 0;
 	while(i!=arg.length)
 	{
