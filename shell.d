@@ -22,4 +22,13 @@ string shell(string[] cmd)
   {
     return readln()[0 .. $ - 1];
   }
+  else if(command == "set")
+  {
+    vars[args[0]] = args[1];
+    return args[1];
+  }
+  else if(command == "get")
+  {
+    return vars[args[0]];
+  }
 }
